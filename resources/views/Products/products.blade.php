@@ -1,4 +1,7 @@
 @extends('theme')
+@section('title')
+    {{ "All Products" }}
+@endsection
 @section('content')
 <div class="container">
 <h1>All Products</h1>

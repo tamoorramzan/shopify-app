@@ -1,4 +1,7 @@
 @extends('theme')
+@section('title')
+    {{ "Edit Product" }}
+@endsection
 @section('content')
 <div class="container">
 <h1>Add application data</h1>
