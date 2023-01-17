@@ -13,7 +13,5 @@ use App\Http\Controllers\ProductsController;
 |
 */
 
-Route::get('/', function () {
-    return view('products.add');
-});
+Route::get('/', [ProductsController::class, 'index']);
 Route::resource('product', ProductsController::class);
