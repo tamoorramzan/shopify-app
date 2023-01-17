@@ -13,5 +13,7 @@ use App\Http\Controllers\ProductsController;
 |
 */
 
-Route::get('/', [ProductsController::class, 'index']);
+Route::get('/', function () {
+    return view('index');
+});
 Route::resource('product', ProductsController::class);
