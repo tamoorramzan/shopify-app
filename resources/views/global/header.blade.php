@@ -11,8 +11,8 @@
         <ul class="nav-menu">
           <li class=""><a href="/">Home</a></li>
           <li><a href="/product">Products</a></li>
-          <li><a href="">Login</a></li>
-          <li><a href="">Register</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/register">Register</a></li>
           <!-- <li><a href="">Contact</a></li> -->
         </ul>
       </nav><!-- #nav-menu-container -->
