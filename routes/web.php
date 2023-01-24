@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +17,10 @@ use App\Http\Controllers\ProductsController;
 Route::get('/', function () {
     return view('index');
 });
-Route::resource('product', ProductsController::class);
-Auth::routes();
 
+Auth::routes();
+Route::get('check',[Controller::class,'checkRole']);
+
+
+Route::resource('product', ProductsController::class)->middleware('products');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
