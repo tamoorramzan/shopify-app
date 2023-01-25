@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\CollectionsController;
 use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('check',[Controller::class,'checkRole']);
 
+Route::resource('product', ProductsController::class);
+// Route::resource('product', ProductsController::class)->middleware('products');
+Route::resource('collection', CollectionsController::class);
 
-Route::resource('product', ProductsController::class)->middleware('products');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

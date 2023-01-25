@@ -13,6 +13,7 @@
         <th>Title</th>
         <th>Description</th>
         <th>Price</th>
+        <th>Collection</th>
         <th>Actions</th>
       </tr>
     </thead>
@@ -23,6 +24,7 @@
         <td>{{ $product->title }}</td>
         <td>{{ $product->description }}</td>
         <td>{{ $product->price }}</td>
+        <td>{{ $product->collection->name }}</td>
         <td>
         <form action="{{ route('product.destroy', $product->id) }}" method="POST">
             <a class="btn btn-info" href="{{ route('product.edit', $product->id) }}">Edit</a>

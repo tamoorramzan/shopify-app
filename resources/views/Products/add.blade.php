@@ -33,6 +33,18 @@
                 <input type="number" name="price" class="form-control" placeholder="Price">
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Price:</strong>
+                <select class="form-select" name="collection_id">
+                    @if($all_collections)
+                    @foreach($all_collections as $collection)
+                    <option value="{{$collection->id}}">{{$collection->name}}</option>
+                    @endforeach
+                    @endif
+                  </select>
+            </div>
+        </div>
         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                 <button type="submit" class="btn btn-primary">Submit</button>
         </div>

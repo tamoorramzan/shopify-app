@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Products;
-use App\Models\COllections;
+use App\Models\Collections;
 
-class ProductsController extends Controller
+class CollectionsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,10 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $all_products = Products::all();
-        return view('Products.products',compact('all_products'));
+        $all_collections = Collections::all();
+        return view('Collections.collections',compact('all_collections'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *
@@ -26,8 +25,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        $all_collections =Collections::all();
-        return view('Products.add', compact('all_collections'));
+        return view('Collections.add');
     }
 
     /**
@@ -39,13 +37,10 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'price' => 'required',
-            'collection_id' => 'required',
+            'name' => 'required'
         ]);
-        Products::create($request->all());
-        return redirect('product');
+        Collections::create($request->all());
+        return redirect('collection');
     }
 
     /**
@@ -67,8 +62,8 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        $con= Products::findOrFail($id);
-         return view('products.edit',compact('con'));
+        $con= Collections::findOrFail($id);
+         return view('Collections.edit',compact('con'));
     }
 
     /**
@@ -81,13 +76,11 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-            'price' => 'required'
+            'name' => 'required'
         ]);
-        $con= Products::findOrFail($id);
+        $con= Collections::findOrFail($id);
         $con->update($request->all());
-        return redirect('product');
+        return redirect('collection');
     }
 
     /**
@@ -98,9 +91,9 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        $con= Products::findOrFail($id);
+        $con= Collections::findOrFail($id);
 
         $con->delete();
-        return redirect('product');
+        return redirect('collection');
     }
 }

@@ -11,6 +11,7 @@
         <ul class="nav-menu">
           <li class=""><a href="/">Home</a></li>
           <li><a href="/product">Products</a></li>
+          <li><a href="/collection">Collections</a></li>
           <li><a href="/login">Login</a></li>
           <li><a href="/register">Register</a></li>
           <!-- <li><a href="">Contact</a></li> -->

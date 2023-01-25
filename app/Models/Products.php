@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Products extends Model
 {
     use HasFactory;
@@ -12,5 +13,10 @@ class Products extends Model
         'title',
         'description',
         'price',
+        'collection_id',
     ];
+    public function collection()
+    {
+        return $this->belongsTo(Collections::class, 'collection_id');
+    }
 }
